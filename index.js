@@ -5,8 +5,9 @@ const connectDb = require("./config/db");
 const path = require("path")
 
 const app = express();
+var cors = require('cors');
 
-const PORT = process.env.PORT || 3500;
+const PORT = process.env.PORT || 3000;
 
 // Connect database
 connectDb();
@@ -22,7 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 // });
 
 // removing the above cause I'm ready to deploy
-
+app.use(cors());
 // Define all your routes
 app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));
@@ -32,6 +33,7 @@ app.use("/api/suppliers", require("./routes/suppliers"));
 app.use("/api/products", require("./routes/products"));
 app.use("/api/purchases", require("./routes/purchases"));
 app.use("/api/allUsers", require("./routes/allUsers"));
+
 
 // Serve the static bundled React app in production mode
 /* Make sure you serve static files after defining your routes */

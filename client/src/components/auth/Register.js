@@ -1,7 +1,7 @@
 import React, { useEffect, useState, createRef } from "react";
 import Navbar from "../home/Navbar";
 import { Link } from "react-router-dom";
-import { HeaderOne, FormComponent } from "../../StyledComponents/utility";
+import { HeaderOne, FormComponent, HeaderTwo } from "../../StyledComponents/utility";
 import RegisterComponent from "../../StyledComponents/auth/Register";
 import { connect } from "react-redux";
 import {
@@ -50,6 +50,7 @@ const Register = ( props ) => {
   const [disableSubmit, setDisableSubmit] = useState(true);
 
   const handleSubmit = e => {
+    console.log("Handling");
     setRegisterLoginLoading()
     e.preventDefault();
     if ( company ) {
@@ -100,14 +101,6 @@ const Register = ( props ) => {
   };
 
   const disabledBtn = () => {
-    if (disableSubmit)
-      return {
-        color: "rgba(0, 0, 0, 0.26)",
-        boxShadow: "none",
-        backgroundColor: "rgba(0, 0, 0, 0.12)",
-        cursor: "default",
-        pointerEvents: "none"
-      };
   };
 
   const errorMessageStyle = {
@@ -158,8 +151,8 @@ const Register = ( props ) => {
   };
 
   return (
-    <>
-      <Navbar public />
+    <div style={{paddingBottom: "5rem", backgroundColor: "rgb(225, 230, 247)"}}>
+      {/* <Navbar public /> */}
       <RegisterComponent>
         <div>
           {alert.map(elem => (
@@ -278,7 +271,7 @@ const Register = ( props ) => {
           />
         </FormComponent>
       </RegisterComponent>
-    </>
+    </div>
   );
 };
 

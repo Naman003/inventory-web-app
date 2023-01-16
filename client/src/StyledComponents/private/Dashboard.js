@@ -1,26 +1,26 @@
 import styled from "styled-components"
 
 const DashboardComponent = styled.div`
-  padding-top: 3.8rem;
+  padding-top: 0rem;
   z-index: -3;
 
   .dashboard-container {
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    min-height: 100vh;
+    grid-template-columns: 1fr 4fr;
+    min-height: 100vh;  
 
     @media screen and (max-width: 750px) {
       display: flex;
       flex-direction: column;
     }
     .left {
-      background: #323237;
+      background: rgb(141, 134, 134);
       color: white;
-      padding-top: 1rem;
+      padding-top: 20rem;
 
       .left-fixed {
         position: fixed;
-        width: 25%;
+        width: 20%;
         /* the above is subject to change depending on the width of the actual content which is a grid item */
 
         @media screen and (max-width: 750px) {
@@ -44,18 +44,22 @@ const DashboardComponent = styled.div`
         .sales,
         .purchases,
         .suppliers {
-          margin-bottom: 3rem;
-          padding: 1rem;
+          ${'' /* margin-bottom: 3rem; */}
+          padding: 1.5rem;
           background: #454343;
           color: white;
           text-decoration: none;
           cursor: pointer;
+          text-align: left;
 
           @media screen and (max-width: 750px) {
             margin-bottom: 0.7rem;
             padding: 0.5rem;
             text-align: center;
             background: none;
+          }
+          :hover{
+            background-color: #323237;
           }
         }
       }
@@ -67,6 +71,7 @@ const DashboardComponent = styled.div`
 
     .right {
       .add {
+        padding: 3.8rem;
         display: flex;
         justify-content: space-evenly;
         border-bottom: 1px solid #ccc;

@@ -2,10 +2,9 @@ import styled, { css } from "styled-components";
 
 const NavbarComponent = styled.nav`
   position: fixed;
-  width: 100%;
-  background: #3672a4;
+  right: 0; 
+  background: white;
   padding: 0.45rem;
-  color: white;
   box-shadow: 0px 6px 5px 0px rgba(128, 128, 128, 1);
 
   @media screen and (max-width: 360px) {
@@ -33,7 +32,7 @@ const NavbarComponent = styled.nav`
     }
 
     .left {
-      flex-basis: 30%;
+      flex-basis: 100%;
 
       @media screen and (max-width: 360px) {
         margin-bottom: 1rem;

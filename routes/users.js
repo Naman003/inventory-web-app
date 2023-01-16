@@ -30,6 +30,7 @@ router.post(
       .isLength({ min: 5 })
   ],
   async (req, res) => {
+    console.log("Entered");
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(422).json({ errors: errors.array() });
@@ -82,6 +83,7 @@ router.post(
 
       // save user to database
       await user.save();
+      console.log("Saved!!");
 
       // create jsonwebtoken
       const payload = {

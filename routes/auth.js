@@ -43,6 +43,7 @@ router.post(
     // This above is the shit. .optional passed along with .isLength is used to tell the validator that despite the fact that "company" is an optional field, if it's included, it must not be less than four characters.
   ],
   async (req, res) => {
+    console.log("Ok");
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(422).json({ errors: errors.array() });
@@ -92,7 +93,9 @@ router.post(
           res.json({ token, msg: "Logged in successfully." });
         }
       );
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   }
 );
 

@@ -80,6 +80,7 @@ export const login = data => async dispatch => {
 export const register = ( data ) => async dispatch => {
   const id = uuid.v4()
   try {
+    console.log("Before Axios");
     const res = await callAxios("POST", "/users", data);
     dispatch({
       type: REGISTER_SUCCESS,

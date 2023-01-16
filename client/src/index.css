@@ -7,6 +7,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #333;
+  /* background-color: rgb(65, 53, 53); */
+}
+body::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 

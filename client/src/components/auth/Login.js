@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createRef } from "react";
 import Navbar from "../home/Navbar";
 import { Link } from "react-router-dom";
-import { HeaderOne, FormComponent } from "../../StyledComponents/utility";
+import { HeaderOne, FormComponent, HeaderTwo } from "../../StyledComponents/utility";
 import LoginComponent from "../../StyledComponents/auth/Login";
 import { connect } from "react-redux";
 import {
@@ -9,7 +9,7 @@ import {
   setRegisterLoginLoading,
   clearRedirectToLogin
 } from "../../actions/authAction";
-
+import image from "../../images.jpg";
 const Login = (props) => {
   const {
     isAuthenticated,
@@ -63,14 +63,14 @@ const Login = (props) => {
   }, [disableSubmit, user]);
 
   const disabledBtn = () => {
-    if (disableSubmit)
-      return {
-        color: "rgba(0, 0, 0, 0.26)",
-        boxShadow: "none",
-        backgroundColor: "rgba(0, 0, 0, 0.12)",
-        cursor: "default",
-        pointerEvents: "none"
-      };
+    // if (disableSubmit)
+    //   return {
+    //     color: "rgba(0, 0, 0, 0.26)",
+    //     boxShadow: "none",
+    //     backgroundColor: "rgba(0, 0, 0, 0.12)",
+    //     cursor: "default",
+    //     pointerEvents: "none"
+    //   };
   };
 
   const onChange = e => {
@@ -96,8 +96,8 @@ const Login = (props) => {
   };
 
   return (
-    <>
-      <Navbar public />
+    <div style={{ paddingBottom: "11rem", backgroundColor: "rgb(225, 230, 247)", overflow: "hidden" }}>
+      
       <LoginComponent>
         <div>
           {alert.map(elem => (
@@ -108,7 +108,7 @@ const Login = (props) => {
                 borderRadius: "10px",
                 padding: ".5rem",
                 textAlign: "center",
-                color: "white",
+                color: "black",
                 background: elem.type === "success" ? "green" : "red"
               }}
               key={elem.id}
@@ -117,10 +117,8 @@ const Login = (props) => {
             </p>
           ))}
         </div>
-        <HeaderOne>Welcome back</HeaderOne>
-        <p className="helper-form-text">
-          Don't have an account yet? <Link to="/register">Sign Up</Link>
-        </p>
+        <HeaderOne>Inventory Management</HeaderOne>
+        <div style={{height:"2rem"}}></div>
         <FormComponent onSubmit={handleSubmit} registerLoginForm>
           <div className="form-group">
             <input
@@ -154,8 +152,11 @@ const Login = (props) => {
             className="submit-btn"
           />
         </FormComponent>
+        <p className="helper-form-text">
+          Don't have an account yet? <Link to="/register">Sign Up</Link>
+        </p>
       </LoginComponent>
-    </>
+    </div>
   );
 };
 

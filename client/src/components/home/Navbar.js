@@ -25,9 +25,8 @@ const Navbar = ( props ) => {
         <div className="left">
           <li className="brand-name">
             <Link to={props.private ? "/dashboard" : "/"}>
-              Fotiá<span className="triangle-icon">▲</span>
               {/* <img className="line-chart" src={lineChart} alt="line chart" /> */}
-            </Link>
+            </Link> 
           </li>
         </div>
         <div

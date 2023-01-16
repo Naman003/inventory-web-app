@@ -75,7 +75,7 @@ const Dashboard = props => {
   } else {
     return (
       <>
-        <Navbar private dashboard />
+        {/* <Navbar private dashboard /> */}
         <DashboardComponent>
           {/* Welcome!
         {!authLoading && user !== null && user.name}
@@ -85,6 +85,7 @@ const Dashboard = props => {
             <div className="left">
               <div className="left-fixed">
                 <div className="left-items">
+                  <div ><img style={{width: ""}} src="../../7656400.png"></img>nice</div>
                   <Link to="/customers">
                     <div title="View all your customers" className="customers">
                       Customers
@@ -114,6 +115,7 @@ const Dashboard = props => {
               </div>
             </div>
             <div className="right">
+              <Navbar private dashboard />
               <div className="add">
                 <p
                   onClick={toggleSalesModal}
